@@ -35,12 +35,25 @@ class CustomUserSerializer(BaseUserSerializer):
         )
         read_only_fields = ('id', 'email', 'is_verified', 'created_at', 'last_login')
 
+    # def get_profile_image_url(self, obj):
+    #     request = self.context.get('request')
+    #     if obj.profile_image and hasattr(obj.profile_image, 'url'):
+    #         if request:
+    #             return request.build_absolute_uri(obj.profile_image.url)
+    #         return obj.profile_image.url
+    #     return None
+    
+    
     def get_profile_image_url(self, obj):
         request = self.context.get('request')
-        if obj.profile_image and hasattr(obj.profile_image, 'url'):
-            if request:
-                return request.build_absolute_uri(obj.profile_image.url)
-            return obj.profile_image.url
+        try:
+            if obj.profile_image and hasattr(obj.profile_image, 'url'):
+                url = obj.profile_image.url
+                if request:
+                    return request.build_absolute_uri(url)
+                return url
+        except Exception:
+            return None
         return None
 
 class UserProfileUpdateSerializer(serializers.ModelSerializer):
@@ -65,6 +78,7 @@ class UserProfileUpdateSerializer(serializers.ModelSerializer):
         }
 
 class ProfileImageSerializer(serializers.ModelSerializer):
+    profile_image = serializers.ImageField()
     class Meta:
         model = CustomUser
         fields = ('profile_image',)

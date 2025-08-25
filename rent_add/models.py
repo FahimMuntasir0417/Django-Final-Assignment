@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.core.validators import MinValueValidator, MaxValueValidator
 from rent_type.models import Category, Amenity
 from django.conf import settings 
-
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -59,7 +59,7 @@ class RentAdvertisement(models.Model):
 
 class AdvertisementImage(models.Model):
     advertisement = models.ForeignKey(RentAdvertisement, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='rent_ads/')
+    image = CloudinaryField('image', blank=True, null=True)
     is_primary = models.BooleanField(default=False)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     

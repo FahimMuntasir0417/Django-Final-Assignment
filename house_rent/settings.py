@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     'django_filters',
     # 'drf_nested_routers',
     
+    'cloudinary',
+    'cloudinary_storage',
+    
     # Local apps
     'users',
     'rent_api',
@@ -61,7 +64,21 @@ INSTALLED_APPS = [
     'rent_user',
 ]
 
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+# Cloudinary Config
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': config('CLOUDINARY_API_KEY'),
+    'API_SECRET': config('CLOUDINARY_API_SECRET'),
+}
+
 MIDDLEWARE = [
+    
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,7 +105,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'house_rent.wsgi.application'
+WSGI_APPLICATION = 'house_rent.wsgi.app'
 
 INTERNAL_IPS = [
     # ...
@@ -161,6 +178,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATIC_FILES_DIR = BASE_DIR / 'static'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

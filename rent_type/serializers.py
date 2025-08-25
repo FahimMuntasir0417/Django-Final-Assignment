@@ -9,7 +9,7 @@ from rent_type.models import Category, Amenity
 
 class CategorySerializer(serializers.ModelSerializer):
     advertisement_count = serializers.SerializerMethodField()
-    
+    icon = serializers.ImageField()
     class Meta:
         model = Category
         fields = ['id', 'name', 'description', 'icon', 'advertisement_count']

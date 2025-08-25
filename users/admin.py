@@ -42,9 +42,13 @@ class CustomUserAdmin(UserAdmin):
     )
 
     #CUSTOM METHODS
-
     def profile_image_preview(self, obj):
         if obj.profile_image:
-            return format_html('<img src="{}" width="50" height="50" style="border-radius: 50%;" />', obj.profile_image.url)
+            try:
+                return format_html(
+                    '<img src="{}" width="50" height="50" style="border-radius: 50%;" />',
+                    obj.profile_image.url
+                )
+            except Exception:
+                return "Invalid Image"
         return "No Image"
-    profile_image_preview.short_description = 'Profile Image'

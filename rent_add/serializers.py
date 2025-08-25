@@ -16,13 +16,17 @@ from rent_type.serializers import AmenitySerializer, CategorySerializer
 
 
 class AdvertisementImageSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField()
+    # image = serializers.ImageField(use_url=True)
     class Meta:
         model = AdvertisementImage
         fields = ['id', 'image', 'is_primary', 'uploaded_at']
 
 class RentAdvertisementListSerializer(serializers.ModelSerializer):
     owner = UserSerializer(read_only=True)
-    primary_image = serializers.SerializerMethodField()
+    # primary_image = serializers.SerializerMethodField()
+    primary_image = serializers.ImageField()
+
     category_name = serializers.CharField(source='category.name', read_only=True)
     is_favorited = serializers.SerializerMethodField()
     average_rating = serializers.SerializerMethodField()
@@ -142,7 +146,9 @@ class RentAdvertisementCreateSerializer(serializers.ModelSerializer):
 class RentRequestSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
     advertisement_title = serializers.CharField(source='advertisement.title', read_only=True)
-    advertisement_image = serializers.SerializerMethodField()
+    # advertisement_image = serializers.SerializerMethodField()
+    advertisement_image = serializers.ImageField()
+
     
     class Meta:
         model = RentRequest

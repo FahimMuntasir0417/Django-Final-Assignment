@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 import os
 import uuid 
-
+from cloudinary.models import CloudinaryField
 
 def user_profile_image_path(instance, filename):
     """Generate file path for user profile image"""
@@ -50,12 +50,7 @@ class CustomUser(AbstractUser):
         null=True,
         verbose_name=_('Phone Number')
     )
-    profile_image = models.ImageField(
-        upload_to=user_profile_image_path,
-        blank=True,
-        null=True,
-        verbose_name=_('Profile Image')
-    )
+    profile_image = CloudinaryField('profile_image', blank=True, null=True)
     role = models.CharField(
         max_length=20, 
         choices=Role.choices, 
