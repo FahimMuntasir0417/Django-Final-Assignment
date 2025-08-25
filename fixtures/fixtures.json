@@ -1,0 +1,341 @@
+[
+  {
+    "model": "users.customuser",
+    "pk": "550e8400-e29b-41d4-a716-446655440000",
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Xc7JqZz7Q6V9Kp8tR2wL3A$4Vl5...",
+      "last_login": "2024-01-15T10:30:00Z",
+      "is_superuser": true,
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "phone_number": "+1234567890",
+      "profile_image": "",
+      "role": "admin",
+      "is_verified": true,
+      "date_joined": "2024-01-01T00:00:00Z",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-15T10:30:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Yd8MqWz7Q6V9Kp8tR2wL3B$5Wm6...",
+      "last_login": "2024-01-14T15:45:00Z",
+      "is_superuser": false,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "phone_number": "+1987654321",
+      "profile_image": "profile_images/6ba7b810-9dad-11d1-80b4-00c04fd430c8_profile.jpg",
+      "role": "user",
+      "is_verified": true,
+      "date_joined": "2024-01-05T09:15:00Z",
+      "created_at": "2024-01-05T09:15:00Z",
+      "updated_at": "2024-01-14T15:45:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Ze9NrXz7Q6V9Kp8tR2wL3C$6Xn7...",
+      "last_login": "2024-01-13T14:20:00Z",
+      "is_superuser": false,
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "email": "jane.smith@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "phone_number": "+1654321987",
+      "profile_image": "profile_images/6ba7b811-9dad-11d1-80b4-00c04fd430c9_profile.jpg",
+      "role": "user",
+      "is_verified": true,
+      "date_joined": "2024-01-10T11:30:00Z",
+      "created_at": "2024-01-10T11:30:00Z",
+      "updated_at": "2024-01-13T14:20:00Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "rent_type.category",
+    "pk": 1,
+    "fields": {
+      "name": "Apartment",
+      "description": "Modern apartments in residential buildings",
+      "icon": "category_icons/apartment.png"
+    }
+  },
+  {
+    "model": "rent_type.category",
+    "pk": 2,
+    "fields": {
+      "name": "House",
+      "description": "Single family homes and townhouses",
+      "icon": "category_icons/house.png"
+    }
+  },
+  {
+    "model": "rent_type.category",
+    "pk": 3,
+    "fields": {
+      "name": "Studio",
+      "description": "Compact studio apartments",
+      "icon": "category_icons/studio.png"
+    }
+  },
+  {
+    "model": "rent_type.amenity",
+    "pk": 1,
+    "fields": {
+      "name": "Swimming Pool",
+      "description": "Private or shared swimming pool"
+    }
+  },
+  {
+    "model": "rent_type.amenity",
+    "pk": 2,
+    "fields": {
+      "name": "Gym",
+      "description": "Fitness center or gym equipment"
+    }
+  },
+  {
+    "model": "rent_type.amenity",
+    "pk": 3,
+    "fields": {
+      "name": "Parking",
+      "description": "Dedicated parking space"
+    }
+  },
+  {
+    "model": "rent_type.amenity",
+    "pk": 4,
+    "fields": {
+      "name": "Balcony",
+      "description": "Private balcony or terrace"
+    }
+  },
+  {
+    "model": "rent_type.amenity",
+    "pk": 5,
+    "fields": {
+      "name": "Air Conditioning",
+      "description": "Central or window AC units"
+    }
+  },
+  {
+    "model": "rent_add.rentadvertisement",
+    "pk": "123e4567-e89b-12d3-a456-426614174000",
+    "fields": {
+      "title": "Luxury Downtown Apartment",
+      "description": "Beautiful 2-bedroom apartment in the heart of downtown with amazing city views. Recently renovated with high-end finishes.",
+      "price": "2500.00",
+      "location": "123 Main St, Downtown",
+      "latitude": "40.712800",
+      "longitude": "-74.006000",
+      "area": "85.00",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "category": 1,
+      "amenities": [1, 2, 3, 5],
+      "owner": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "status": "approved",
+      "created_at": "2024-01-10T09:00:00Z",
+      "updated_at": "2024-01-12T14:30:00Z",
+      "is_available": true,
+      "available_from": "2024-02-01",
+      "minimum_lease": 12,
+      "deposit": "2500.00",
+      "contact_phone": "+1987654321",
+      "contact_email": "john.doe@example.com",
+      "views_count": 45
+    }
+  },
+  {
+    "model": "rent_add.rentadvertisement",
+    "pk": "223e4567-e89b-12d3-a456-426614174001",
+    "fields": {
+      "title": "Cozy Studio Near University",
+      "description": "Perfect studio apartment for students. Close to campus, public transportation, and shopping centers.",
+      "price": "1200.00",
+      "location": "456 College Ave, University District",
+      "latitude": "40.713000",
+      "longitude": "-74.007000",
+      "area": "40.00",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "category": 3,
+      "amenities": [3, 5],
+      "owner": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+      "status": "approved",
+      "created_at": "2024-01-08T11:30:00Z",
+      "updated_at": "2024-01-14T16:45:00Z",
+      "is_available": true,
+      "available_from": "2024-01-20",
+      "minimum_lease": 6,
+      "deposit": "1200.00",
+      "contact_phone": "+1654321987",
+      "contact_email": "jane.smith@example.com",
+      "views_count": 78
+    }
+  },
+  {
+    "model": "rent_add.rentadvertisement",
+    "pk": "323e4567-e89b-12d3-a456-426614174002",
+    "fields": {
+      "title": "Family House with Garden",
+      "description": "Spacious 3-bedroom house with large backyard. Perfect for families. Quiet neighborhood with good schools nearby.",
+      "price": "3500.00",
+      "location": "789 Oak St, Suburbia",
+      "latitude": "40.714000",
+      "longitude": "-74.008000",
+      "area": "150.00",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "category": 2,
+      "amenities": [3, 4],
+      "owner": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "status": "pending",
+      "created_at": "2024-01-15T08:15:00Z",
+      "updated_at": "2024-01-15T08:15:00Z",
+      "is_available": true,
+      "available_from": "2024-03-01",
+      "minimum_lease": 12,
+      "deposit": "3500.00",
+      "contact_phone": "+1987654321",
+      "contact_email": "john.doe@example.com",
+      "views_count": 12
+    }
+  },
+  {
+    "model": "rent_add.advertisementimage",
+    "pk": 1,
+    "fields": {
+      "advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "image": "rent_ads/luxury_apartment_1.jpg",
+      "is_primary": true,
+      "uploaded_at": "2024-01-10T09:05:00Z"
+    }
+  },
+  {
+    "model": "rent_add.advertisementimage",
+    "pk": 2,
+    "fields": {
+      "advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "image": "rent_ads/luxury_apartment_2.jpg",
+      "is_primary": false,
+      "uploaded_at": "2024-01-10T09:06:00Z"
+    }
+  },
+  {
+    "model": "rent_add.advertisementimage",
+    "pk": 3,
+    "fields": {
+      "advertisement": "223e4567-e89b-12d3-a456-426614174001",
+      "image": "rent_ads/studio_1.jpg",
+      "is_primary": true,
+      "uploaded_at": "2024-01-08T11:35:00Z"
+    }
+  },
+  {
+    "model": "rent_add.rentrequest",
+    "pk": "423e4567-e89b-12d3-a456-426614174003",
+    "fields": {
+      "advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "user": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+      "message": "I'm very interested in your apartment. Would it be possible to schedule a viewing next week?",
+      "status": "pending",
+      "move_in_date": "2024-02-15",
+      "lease_duration": 12,
+      "created_at": "2024-01-12T14:00:00Z",
+      "updated_at": "2024-01-12T14:00:00Z"
+    }
+  },
+  {
+    "model": "rent_add.favoriteadvertisement",
+    "pk": 1,
+    "fields": {
+      "user": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+      "advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "created_at": "2024-01-11T10:30:00Z",
+      "notes": "Great location and price!"
+    }
+  },
+  {
+    "model": "rent_add.review",
+    "pk": 1,
+    "fields": {
+      "advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "user": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+      "rating": 5,
+      "comment": "Amazing apartment! The owner was very responsive and the location is perfect.",
+      "created_at": "2024-01-13T16:20:00Z",
+      "updated_at": "2024-01-13T16:20:00Z",
+      "is_verified": true
+    }
+  },
+  {
+    "model": "rent_user.notification",
+    "pk": 1,
+    "fields": {
+      "user": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "notification_type": "rent_request",
+      "message": "Jane Smith has sent a rent request for your Luxury Downtown Apartment",
+      "related_advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "related_request": "423e4567-e89b-12d3-a456-426614174003",
+      "is_read": false,
+      "created_at": "2024-01-12T14:02:00Z"
+    }
+  },
+  {
+    "model": "rent_user.notification",
+    "pk": 2,
+    "fields": {
+      "user": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+      "notification_type": "ad_approved",
+      "message": "Your advertisement 'Cozy Studio Near University' has been approved",
+      "related_advertisement": "223e4567-e89b-12d3-a456-426614174001",
+      "related_request": null,
+      "is_read": true,
+      "created_at": "2024-01-09T09:15:00Z"
+    }
+  },
+  {
+    "model": "rent_user.message",
+    "pk": 1,
+    "fields": {
+      "sender": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+      "recipient": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "subject": "Question about the apartment",
+      "content": "Hello, I wanted to ask if pets are allowed in the apartment?",
+      "is_read": true,
+      "created_at": "2024-01-11T11:45:00Z"
+    }
+  },
+  {
+    "model": "rent_user.message",
+    "pk": 2,
+    "fields": {
+      "sender": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "recipient": "6ba7b811-9dad-11d1-80b4-00c04fd430c9",
+      "advertisement": "123e4567-e89b-12d3-a456-426614174000",
+      "subject": "Re: Question about the apartment",
+      "content": "Yes, small pets are allowed with an additional pet deposit.",
+      "is_read": false,
+      "created_at": "2024-01-11T12:30:00Z"
+    }
+  }
+]
