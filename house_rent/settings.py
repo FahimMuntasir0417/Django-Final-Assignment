@@ -36,18 +36,19 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    "whitenoise.runserver_nostatic",
+    
     'django.contrib.staticfiles',
     'drf_yasg',
 
     'django.contrib.sites',
     
-        # Third party apps
+    # Third party apps
     'rest_framework',
     'rest_framework_simplejwt',
     'djoser',
