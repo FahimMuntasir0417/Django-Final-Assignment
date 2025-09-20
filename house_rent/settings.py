@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'djoser',
     'django_filters',
+    "corsheaders",
     # 'drf_nested_routers',
     
     'cloudinary',
@@ -80,7 +81,8 @@ CLOUDINARY_STORAGE = {
 MIDDLEWARE = [
     
     
-    
+    "corsheaders.middleware.CorsMiddleware",
+
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -109,6 +111,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'house_rent.wsgi.app'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173' 
+    
+    
+    
+    
+    
+    
+]
 
 INTERNAL_IPS = [
     # ...
