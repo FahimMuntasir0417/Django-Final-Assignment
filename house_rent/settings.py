@@ -113,7 +113,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'house_rent.wsgi.app'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173' 
+    'http://localhost:5173' ,
+    'https://django-final-assignment.vercel.app'
     
     
     
