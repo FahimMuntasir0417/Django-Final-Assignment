@@ -25,7 +25,8 @@ class AdvertisementImageSerializer(serializers.ModelSerializer):
 class RentAdvertisementListSerializer(serializers.ModelSerializer):
     owner = UserSerializer(read_only=True)
     # primary_image = serializers.SerializerMethodField()
-    primary_image = serializers.ImageField()
+    # primary_image = serializers.ImageField()
+    primary_image = serializers.SerializerMethodField()
 
     category_name = serializers.CharField(source='category.name', read_only=True)
     is_favorited = serializers.SerializerMethodField()

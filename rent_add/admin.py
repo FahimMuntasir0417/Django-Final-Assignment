@@ -11,10 +11,21 @@ class RentAdvertisementAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at', 'views_count']
     filter_horizontal = ['amenities']
 
+# @admin.register(AdvertisementImage)
+# class AdvertisementImageAdmin(admin.ModelAdmin):
+#     list_display = ['advertisement', 'is_primary']
+#     list_filter = ['is_primary']
+
 @admin.register(AdvertisementImage)
 class AdvertisementImageAdmin(admin.ModelAdmin):
-    list_display = ['advertisement', 'is_primary']
+    list_display = ['advertisement', 'is_primary','uploaded_at']
     list_filter = ['is_primary']
+
+    # ForeignKey লোডের optimization
+    raw_id_fields = ('advertisement',)  # বড় dataset থাকলে use করুন
+
+    # একসাথে অনেক ডেটা লোড এড়াতে pagination
+    list_per_page = 50 
 
 @admin.register(RentRequest)
 class RentRequestAdmin(admin.ModelAdmin):
