@@ -469,6 +469,8 @@ SIMPLE_JWT = {
 SITE_ID = 1
 
 DJOSER = {
+    'EMAIL_FRONTEND_PROTOCOL': "http",
+    'EMAIL_FRONTEND_DOMAIN': "localhost:5173",
     'USER_CREATE_PASSWORD_RETYPE': True,
     'SEND_ACTIVATION_EMAIL': True,
     'ACTIVATION_URL': 'activate/{uid}/{token}',
